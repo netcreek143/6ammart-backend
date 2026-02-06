@@ -119,10 +119,9 @@ return new class extends Migration {
                 $table->enum('charge_payer', ['sender', 'receiver'])->nullable();
                 $table->double('distance', 16, 3)->default(0);
                 // Excluded: dm_tips (added by 2022_05_14 migration)
-                $table->string('free_delivery_by', 255)->nullable();
+                // Excluded: free_delivery_by (added by 2022_07_31 migration)
                 $table->timestamp('refund_request_canceled')->nullable();
-                $table->tinyInteger('prescription_order')->default(0);
-                $table->string('tax_status', 50)->nullable();
+                // Excluded: prescription_order, tax_status (added by later migrations)
                 $table->unsignedBigInteger('dm_vehicle_id')->nullable();
                 $table->string('cancellation_reason', 255)->nullable();
                 $table->string('canceled_by', 50)->nullable();
