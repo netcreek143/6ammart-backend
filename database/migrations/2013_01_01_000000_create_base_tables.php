@@ -339,9 +339,7 @@ return new class extends Migration {
                 $table->string('contact_person_name', 100)->nullable();
                 $table->timestamps();
                 $table->unsignedBigInteger('zone_id');
-                $table->string('floor', 255)->nullable();
-                $table->string('road', 255)->nullable();
-                $table->string('house', 255)->nullable();
+                // Excluded: floor, road, house (added by 2022_05_12 migration)
             });
         }
     }
