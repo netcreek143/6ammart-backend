@@ -118,7 +118,7 @@ return new class extends Migration {
                 $table->longText('receiver_details')->nullable();
                 $table->enum('charge_payer', ['sender', 'receiver'])->nullable();
                 $table->double('distance', 16, 3)->default(0);
-                $table->double('dm_tips', 24, 2)->default(0);
+                // Excluded: dm_tips (added by 2022_05_14 migration)
                 $table->string('free_delivery_by', 255)->nullable();
                 $table->timestamp('refund_request_canceled')->nullable();
                 $table->tinyInteger('prescription_order')->default(0);
